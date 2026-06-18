@@ -1,0 +1,549 @@
+
+> writeonce@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://2.0.0.1:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.4s
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 3.2s (615 modules)
+ GET /blog/cloudflare-next-js 200 in 3214ms
+ GET /blog/cloudflare-next-js 200 in 3382ms
+ GET /blog/cloudflare-next-js 200 in 1925ms
+ GET /blog/cloudflare-next-js 200 in 1189ms
+ GET /blog/cloudflare-next-js 200 in 1192ms
+ GET /blog/cloudflare-next-js 200 in 142ms
+ GET /blog/cloudflare-next-js 200 in 138ms
+ ✓ Compiled in 321ms (615 modules)
+ GET /blog/cloudflare-next-js 200 in 182ms
+ GET /blog/cloudflare-next-js 200 in 181ms
+ GET /blog/cloudflare-next-js 200 in 219ms
+ GET /blog/cloudflare-next-js 200 in 121ms
+ ✓ Compiled in 511ms (616 modules)
+ GET /blog/cloudflare-next-js 200 in 290ms
+ GET /blog/cloudflare-next-js 200 in 290ms
+ GET /blog/cloudflare-next-js 200 in 287ms
+ ✓ Compiled / in 379ms (607 modules)
+ GET / 200 in 889ms
+ GET / 200 in 46ms
+ ✓ Compiled /publish/[slug] in 412ms (615 modules)
+ GET /publish/cloudflare-pages 200 in 1074ms
+ GET /blog/cloudflare-pages 200 in 65ms
+ GET / 200 in 52ms
+ GET /publish/cloudflare-next-js 200 in 41ms
+ GET /blog/cloudflare-next-js 200 in 44ms
+ GET / 200 in 31ms
+ GET /publish/cloudflare-pages 200 in 38ms
+ GET /publish/cloudflare-pages 200 in 41ms
+ GET / 200 in 30ms
+ GET /publish/cloudflare-pages 200 in 38ms
+ GET /blog/cloudflare-pages 200 in 36ms
+ GET / 200 in 30ms
+ GET /publish/cloudflare-pages 200 in 36ms
+ GET /blog/cloudflare-pages 200 in 38ms
+ ✓ Compiled in 555ms (615 modules)
+ GET / 200 in 470ms
+ GET /blog/cloudflare-next-js 200 in 468ms
+ GET / 200 in 73ms
+ GET /blog/cloudflare-next-js 200 in 72ms
+ GET / 200 in 136ms
+ ✓ Compiled /blog in 246ms (617 modules)
+ GET /blog 200 in 424ms
+ GET /blog/cloudflare-next-js 200 in 153ms
+ GET /blog 200 in 107ms
+ GET /blog/cloudflare-next-js 200 in 73ms
+ ○ Compiling /write/[slug] ...
+ ✓ Compiled /write/[slug] in 585ms (627 modules)
+ GET /write/cloudflare-next-js 200 in 1456ms
+ GET /write/cloudflare-next-js 200 in 73ms
+ GET / 200 in 62ms
+ GET /write/cloudflare-pages 200 in 64ms
+ GET / 200 in 58ms
+ GET / 200 in 289ms
+ GET /blog 200 in 70ms
+ GET / 200 in 99ms
+ ✓ Compiled in 534ms (628 modules)
+ GET / 200 in 432ms
+ GET / 200 in 440ms
+ GET / 200 in 54ms
+ GET / 200 in 57ms
+ GET / 200 in 163ms
+ GET /blog 200 in 117ms
+ ✓ Compiled /admin in 314ms (630 modules)
+ GET /admin 200 in 536ms
+ GET / 200 in 119ms
+ GET /admin 200 in 53ms
+ ✓ Compiled in 782ms (642 modules)
+ GET / 200 in 535ms
+ GET / 200 in 548ms
+ GET / 200 in 526ms
+ GET / 200 in 204ms
+ GET /?article=cloudflare-next-js 200 in 207ms
+ GET /?article=wenzhang-1781662923911 200 in 61ms
+ GET /?article=cloudflare-next-js 200 in 64ms
+ GET /?article=wenzhang-1781662923911 200 in 49ms
+ GET /?article=cloudflare-next-js 200 in 66ms
+ GET /?article=wenzhang-1781662923911 200 in 54ms
+ GET /?article=cloudflare-next-js 200 in 64ms
+ ✓ Compiled in 1045ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 302ms
+ GET / 200 in 307ms
+ GET / 200 in 260ms
+ GET /write/cloudflare-next-js 200 in 163ms
+ GET /?article=cloudflare-next-js 200 in 117ms
+ GET /?article=wenzhang-1781662923911 200 in 52ms
+ GET /?article=cloudflare-next-js 200 in 61ms
+ ✓ Compiled in 870ms (642 modules)
+ GET / 200 in 314ms
+ GET /?article=cloudflare-next-js 200 in 318ms
+ GET / 200 in 278ms
+ ✓ Compiled in 354ms (642 modules)
+ GET / 200 in 189ms
+ GET /?article=cloudflare-next-js 200 in 182ms
+ GET / 200 in 124ms
+ ✓ Compiled in 414ms (642 modules)
+ GET / 200 in 133ms
+ GET /?article=cloudflare-next-js 200 in 130ms
+ GET / 200 in 169ms
+ ✓ Compiled in 271ms (398 modules)
+ GET / 200 in 229ms
+ GET /?article=cloudflare-next-js 200 in 229ms
+ GET / 200 in 102ms
+ GET /?article=cloudflare-next-js 200 in 119ms
+ ✓ Compiled in 488ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 242ms
+ GET / 200 in 249ms
+ GET / 200 in 177ms
+ GET /?article=cloudflare-next-js 200 in 124ms
+ ✓ Compiled in 489ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 239ms
+ GET / 200 in 242ms
+ ✓ Compiled in 323ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 116ms
+ GET / 200 in 121ms
+ ✓ Compiled in 335ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 145ms
+ GET / 200 in 151ms
+ GET / 200 in 133ms
+ ✓ Compiled in 346ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 152ms
+ GET / 200 in 156ms
+ GET / 200 in 98ms
+ GET /?article=cloudflare-next-js 200 in 120ms
+ ✓ Compiled in 333ms (642 modules)
+ GET / 200 in 149ms
+ GET /?article=cloudflare-next-js 200 in 144ms
+ GET / 200 in 120ms
+ GET /?article=cloudflare-next-js 200 in 125ms
+ ✓ Compiled in 380ms (642 modules)
+ GET / 200 in 144ms
+ GET /?article=cloudflare-next-js 200 in 144ms
+ ✓ Compiled in 329ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 196ms
+ GET / 200 in 202ms
+ ✓ Compiled in 180ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 144ms
+ GET / 200 in 151ms
+ GET / 200 in 182ms
+ GET /?article=cloudflare-next-js 200 in 123ms
+ ✓ Compiled in 427ms (642 modules)
+ GET / 200 in 154ms
+ GET /?article=cloudflare-next-js 200 in 149ms
+ GET / 200 in 253ms
+ ✓ Compiled in 384ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 160ms
+ GET / 200 in 164ms
+ ✓ Compiled in 237ms (642 modules)
+ GET / 200 in 137ms
+ GET /?article=cloudflare-next-js 200 in 138ms
+ GET /blog 200 in 69ms
+ GET / 200 in 185ms
+ ✓ Compiled /admin in 476ms (400 modules)
+ GET /admin 200 in 689ms
+ GET /admin 200 in 140ms
+ GET / 200 in 260ms
+ GET /blog 200 in 64ms
+ GET / 200 in 55ms
+ GET / 200 in 69ms
+ GET / 200 in 61ms
+ GET / 200 in 60ms
+ GET / 200 in 184ms
+ GET /blog 200 in 61ms
+ GET / 200 in 71ms
+ GET / 200 in 67ms
+ GET / 200 in 62ms
+ GET / 200 in 60ms
+ GET /blog 200 in 53ms
+ GET / 200 in 61ms
+ GET /blog 200 in 52ms
+ GET /admin 200 in 48ms
+ GET /?article=wenzhang-1781662923911 200 in 34ms
+ GET /?article=cloudflare-next-js 200 in 47ms
+ GET /?article=wenzhang-1781662923911 200 in 38ms
+ GET /?article=cloudflare-next-js 200 in 41ms
+ GET /?article=wenzhang-1781662923911 200 in 27ms
+ GET /?article=cloudflare-next-js 200 in 32ms
+ ✓ Compiled in 433ms (642 modules)
+ GET / 200 in 176ms
+ GET /?article=cloudflare-next-js 200 in 180ms
+ GET /?article=cloudflare-next-js 200 in 93ms
+ GET / 200 in 134ms
+ ✓ Compiled in 329ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 133ms
+ GET / 200 in 132ms
+ GET / 200 in 189ms
+ GET /?article=cloudflare-next-js 200 in 70ms
+ ✓ Compiled in 237ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 142ms
+ GET / 200 in 139ms
+ GET /?article=cloudflare-next-js 200 in 98ms
+ ✓ Compiled in 123ms (398 modules)
+ GET / 200 in 121ms
+ GET /?article=cloudflare-next-js 200 in 122ms
+ GET /?article=cloudflare-next-js 200 in 90ms
+ ✓ Compiled in 279ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 159ms
+ GET / 200 in 158ms
+ GET /?article=cloudflare-next-js 200 in 89ms
+ ✓ Compiled in 220ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 102ms
+ GET / 200 in 100ms
+ ✓ Compiled in 174ms (642 modules)
+ GET / 200 in 145ms
+ GET /?article=cloudflare-next-js 200 in 151ms
+ GET /?article=cloudflare-next-js 200 in 94ms
+ ✓ Compiled in 221ms (642 modules)
+ GET / 200 in 96ms
+ GET /?article=cloudflare-next-js 200 in 101ms
+ GET /?article=cloudflare-next-js 200 in 87ms
+ ✓ Compiled in 201ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 155ms
+ GET / 200 in 155ms
+ GET /?article=cloudflare-next-js 200 in 89ms
+ GET /admin 200 in 82ms
+ ✓ Compiled in 344ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 144ms
+ GET / 200 in 143ms
+ ✓ Compiled in 215ms (642 modules)
+ GET / 200 in 100ms
+ GET /?article=cloudflare-next-js 200 in 103ms
+ GET /?article=cloudflare-next-js 200 in 174ms
+ GET / 200 in 130ms
+ GET /?article=wenzhang-1781662923911 200 in 43ms
+ GET /?article=cloudflare-next-js 200 in 37ms
+ ✓ Compiled in 349ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 111ms
+ GET / 200 in 108ms
+ GET /?article=cloudflare-next-js 200 in 91ms
+ GET / 200 in 132ms
+ ✓ Compiled in 233ms (642 modules)
+ GET / 200 in 87ms
+ GET /?article=cloudflare-next-js 200 in 94ms
+ GET /?article=cloudflare-next-js 200 in 85ms
+ GET / 200 in 136ms
+ GET / 200 in 146ms
+ ✓ Compiled in 526ms (642 modules)
+ GET / 200 in 160ms
+ GET /?article=cloudflare-next-js 200 in 171ms
+ GET /?article=cloudflare-next-js 200 in 113ms
+ ✓ Compiled in 383ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 164ms
+ GET / 200 in 164ms
+ GET /?article=cloudflare-next-js 200 in 89ms
+ GET / 200 in 138ms
+ ✓ Compiled in 535ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 305ms
+ GET / 200 in 309ms
+ GET /?article=cloudflare-next-js 200 in 196ms
+ GET /?article=wenzhang-1781662923911 200 in 59ms
+ GET /?article=cloudflare-next-js 200 in 63ms
+ GET /?article=wenzhang-1781662923911 200 in 49ms
+ GET /?article=cloudflare-next-js 200 in 69ms
+ GET /?article=cloudflare-next-js 200 in 126ms
+ GET /?article=cloudflare-next-js 200 in 131ms
+ GET /?article=wenzhang-1781662923911 200 in 52ms
+ GET /?article=cloudflare-next-js 200 in 60ms
+ GET /admin 200 in 65ms
+ GET / 200 in 67ms
+ GET /admin 200 in 51ms
+ GET /publish/cloudflare-pages 200 in 89ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 618ms (400 modules)
+ GET /blog/cloudflare-pages 200 in 853ms
+ GET /blog/cloudflare-pages 200 in 132ms
+ GET /?article=cloudflare-next-js 200 in 277ms
+ GET /blog/cloudflare-pages 200 in 60ms
+ GET / 200 in 63ms
+ GET / 200 in 186ms
+ GET /admin 200 in 60ms
+ GET /write/cloudflare-pages 200 in 78ms
+ GET /publish/cloudflare-pages 200 in 79ms
+ GET /write/cloudflare-pages 200 in 63ms
+ GET /write/cloudflare-pages 200 in 61ms
+ ○ Compiling /api/articles ...
+ ✓ Compiled /api/articles in 709ms (647 modules)
+ POST /api/articles 200 in 961ms
+ GET /write/cloudflare-pages 200 in 151ms
+ GET /write/cloudflare-pages 200 in 51ms
+ GET / 200 in 69ms
+ GET /?article=wenzhang-1781662923911 200 in 51ms
+ GET /?article=cloudflare-pages 200 in 56ms
+ GET /?article=cloudflare-next-js 200 in 58ms
+ GET /admin 200 in 55ms
+ GET /write/new 200 in 56ms
+ POST /api/articles 200 in 18ms
+ GET /write/123 200 in 59ms
+ GET /write/123 200 in 51ms
+ POST /api/articles 200 in 25ms
+ GET /write/123 200 in 51ms
+ GET /write/123 200 in 47ms
+ GET / 200 in 66ms
+ GET /admin 200 in 48ms
+ GET /blog/123 200 in 75ms
+ ✓ Compiled in 716ms (628 modules)
+ GET /admin 200 in 668ms
+ GET /?article=cloudflare-next-js 200 in 693ms
+ GET /admin 200 in 77ms
+ GET /?article=cloudflare-next-js 200 in 85ms
+ GET /publish/cloudflare-pages 200 in 158ms
+ GET /admin 200 in 120ms
+ GET /publish/123 200 in 56ms
+ ✓ Compiled /api/articles/[slug]/publish in 310ms (647 modules)
+ POST /api/articles/123/publish 200 in 943ms
+ GET /publish/123 200 in 145ms
+ GET /blog/123 200 in 77ms
+ GET / 200 in 75ms
+ GET /?article=cloudflare-next-js 200 in 66ms
+ ✓ Compiled in 386ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 198ms
+ GET /?article=cloudflare-next-js 200 in 196ms
+ GET /?article=cloudflare-next-js 200 in 293ms
+ ✓ Compiled in 433ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 188ms
+ GET /?article=cloudflare-next-js 200 in 188ms
+ GET /?article=cloudflare-next-js 200 in 94ms
+ ✓ Compiled in 255ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 113ms
+ GET /?article=cloudflare-next-js 200 in 113ms
+ GET /?article=cloudflare-next-js 200 in 110ms
+ ✓ Compiled in 482ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 134ms
+ GET /?article=cloudflare-next-js 200 in 138ms
+ ✓ Compiled in 330ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 212ms
+ GET /?article=cloudflare-next-js 200 in 212ms
+ ✓ Compiled in 306ms (642 modules)
+ GET /?article=cloudflare-next-js 200 in 201ms
+ GET /?article=cloudflare-next-js 200 in 202ms
+ GET /?article=cloudflare-next-js 200 in 177ms
+ GET / 200 in 75ms
+ GET / 200 in 66ms
+ GET /?article=cloudflare-next-js 200 in 74ms
+ GET /?article=123 200 in 62ms
+ GET /?article=cloudflare-next-js 200 in 66ms
+ GET /?article=123 200 in 54ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 523ms (400 modules)
+ GET /blog 200 in 728ms
+ GET /?article=cloudflare-next-js 200 in 277ms
+ GET /blog 200 in 159ms
+ GET /blog/123 200 in 81ms
+ GET /blog/cloudflare-next-js 200 in 67ms
+ GET /write/cloudflare-next-js 200 in 93ms
+ GET / 200 in 62ms
+ GET /admin 200 in 74ms
+ GET / 200 in 57ms
+ GET /write/123 200 in 61ms
+ ✓ Compiled in 1074ms (635 modules)
+ GET /admin 200 in 945ms
+ GET /?article=cloudflare-next-js 200 in 959ms
+ GET /admin 200 in 71ms
+ GET /?article=cloudflare-next-js 200 in 76ms
+ GET /admin 200 in 234ms
+ GET /admin 200 in 119ms
+ ✓ Compiled /api/articles/[slug]/unpublish in 331ms (654 modules)
+ POST /api/articles/123/unpublish 200 in 1030ms
+ GET /admin 200 in 139ms
+ POST /api/articles/cloudflare-pages/unpublish 200 in 38ms
+ GET /admin 200 in 65ms
+ POST /api/articles/wenzhang-1781662923911/unpublish 200 in 34ms
+ GET /admin 200 in 60ms
+ GET / 200 in 82ms
+ GET / 200 in 294ms
+ GET /admin 200 in 67ms
+ GET /blog 200 in 76ms
+ GET / 200 in 149ms
+ GET /admin 200 in 59ms
+ GET /write/cloudflare-next-js 200 in 90ms
+ GET / 200 in 66ms
+ GET / 200 in 144ms
+ ✓ Compiled in 794ms (649 modules)
+ GET / 200 in 307ms
+ GET /?article=cloudflare-next-js 200 in 325ms
+ GET / 200 in 87ms
+ GET /?article=cloudflare-next-js 200 in 172ms
+ GET /?article=cloudflare-next-js 200 in 168ms
+ GET /?article=cloudflare-next-js 200 in 143ms
+ GET / 200 in 74ms
+ ✓ Compiled in 998ms (639 modules)
+ GET / 200 in 423ms
+ GET / 200 in 420ms
+ GET /?article=cloudflare-next-js 200 in 428ms
+ GET / 200 in 229ms
+ ✓ Compiled in 563ms (653 modules)
+ GET / 200 in 334ms
+ GET /?article=cloudflare-next-js 200 in 339ms
+ GET / 200 in 212ms
+ GET / 200 in 121ms
+ ✓ Compiled in 314ms (653 modules)
+ GET / 200 in 305ms
+ GET / 200 in 310ms
+ GET /?article=cloudflare-next-js 200 in 318ms
+ GET / 200 in 145ms
+ ✓ Compiled in 435ms (653 modules)
+ GET / 200 in 337ms
+ GET / 200 in 334ms
+ GET /?article=cloudflare-next-js 200 in 344ms
+ GET / 200 in 152ms
+ GET /?article=cloudflare-next-js 200 in 207ms
+ GET / 200 in 158ms
+ GET / 200 in 72ms
+ GET / 200 in 69ms
+ GET / 200 in 144ms
+ ✓ Compiled in 539ms (653 modules)
+ GET /?article=cloudflare-next-js 200 in 335ms
+ GET / 200 in 329ms
+ GET / 200 in 341ms
+ GET / 200 in 146ms
+ ✓ Compiled in 518ms (653 modules)
+ GET / 200 in 334ms
+ GET /?article=cloudflare-next-js 200 in 337ms
+ GET / 200 in 313ms
+ GET / 200 in 148ms
+ GET /?article=cloudflare-next-js 200 in 302ms
+ GET /?article=cloudflare-next-js 200 in 88ms
+ GET /?article=cloudflare-next-js 200 in 86ms
+ ✓ Compiled in 644ms (404 modules)
+ GET /?article=cloudflare-next-js 200 in 328ms
+ GET / 200 in 354ms
+ GET / 200 in 356ms
+ GET / 200 in 135ms
+ GET / 200 in 207ms
+ ✓ Compiled in 391ms (653 modules)
+ GET /?article=cloudflare-next-js 200 in 431ms
+ GET / 200 in 435ms
+ GET / 200 in 432ms
+ GET / 200 in 202ms
+ GET /?article=cloudflare-next-js 200 in 186ms
+ GET / 200 in 139ms
+ ✓ Compiled in 372ms (653 modules)
+ GET / 200 in 221ms
+ GET /?article=cloudflare-next-js 200 in 229ms
+ GET / 200 in 226ms
+ GET / 200 in 222ms
+ GET /?article=cloudflare-next-js 200 in 128ms
+ GET / 200 in 131ms
+ GET / 200 in 133ms
+ GET / 200 in 166ms
+ ✓ Compiled in 624ms (653 modules)
+ GET /?article=cloudflare-next-js 200 in 396ms
+ GET / 200 in 399ms
+ GET / 200 in 401ms
+ GET / 200 in 409ms
+ GET / 200 in 201ms
+ GET / 200 in 129ms
+ GET /?article=cloudflare-next-js 200 in 127ms
+ GET / 200 in 146ms
+ ✓ Compiled in 632ms (656 modules)
+ GET / 200 in 293ms
+ GET /?article=cloudflare-next-js 200 in 299ms
+ GET / 200 in 299ms
+ GET / 200 in 140ms
+ GET /?article=cloudflare-next-js 200 in 121ms
+ GET / 200 in 171ms
+ GET / 200 in 367ms
+ GET / 200 in 144ms
+ GET / 200 in 134ms
+ ✓ Compiled in 326ms (642 modules)
+ ✓ Compiled in 201ms (656 modules)
+ GET /?article=cloudflare-next-js 200 in 177ms
+ GET / 200 in 168ms
+ GET / 200 in 174ms
+ GET / 200 in 179ms
+ GET /?article=cloudflare-next-js 200 in 101ms
+ GET / 200 in 134ms
+ ✓ Compiled in 388ms (656 modules)
+ GET / 200 in 259ms
+ GET / 200 in 271ms
+ GET /?article=cloudflare-next-js 200 in 280ms
+ GET / 200 in 261ms
+ GET /?article=cloudflare-next-js 200 in 102ms
+ GET / 200 in 132ms
+ ✓ Compiled in 427ms (656 modules)
+ GET /?article=cloudflare-next-js 200 in 246ms
+ GET / 200 in 239ms
+ GET / 200 in 226ms
+ GET / 200 in 241ms
+ GET /?article=cloudflare-next-js 200 in 200ms
+ GET / 200 in 136ms
+ GET / 200 in 128ms
+ ✓ Compiled in 419ms (656 modules)
+ GET / 200 in 259ms
+ GET /?article=cloudflare-next-js 200 in 262ms
+ GET / 200 in 255ms
+ GET / 200 in 260ms
+ GET / 200 in 198ms
+ GET /?article=cloudflare-next-js 200 in 135ms
+ ✓ Compiled in 286ms (656 modules)
+ GET / 200 in 230ms
+ GET /?article=cloudflare-next-js 200 in 237ms
+ GET / 200 in 234ms
+ GET / 200 in 232ms
+ GET /?article=cloudflare-next-js 200 in 137ms
+ ✓ Compiled in 367ms (656 modules)
+ GET / 200 in 239ms
+ GET /?article=cloudflare-next-js 200 in 248ms
+ GET / 200 in 248ms
+ GET / 200 in 242ms
+ GET /?article=cloudflare-next-js 200 in 96ms
+ GET /?article=cloudflare-next-js 200 in 71ms
+ GET / 200 in 167ms
+ ✓ Compiled in 576ms (656 modules)
+ GET / 200 in 322ms
+ GET / 200 in 301ms
+ GET / 200 in 289ms
+ GET /?article=cloudflare-next-js 200 in 306ms
+ ✓ Compiled in 553ms (656 modules)
+ GET /?article=cloudflare-next-js 200 in 356ms
+ GET / 200 in 352ms
+ GET / 200 in 361ms
+ GET / 200 in 353ms
+ GET /?article=cloudflare-next-js 200 in 209ms
+ ✓ Compiled in 426ms (656 modules)
+ GET / 200 in 250ms
+ GET /?article=cloudflare-next-js 200 in 257ms
+ GET / 200 in 239ms
+ GET / 200 in 248ms
+ GET /?article=cloudflare-next-js 200 in 125ms
+ GET / 200 in 150ms
+ GET / 200 in 325ms
+ GET / 200 in 107ms
+ GET /admin 200 in 168ms
+ GET /publish/cloudflare-pages 200 in 183ms
+ GET / 200 in 91ms
+ GET /admin 200 in 80ms
+ GET /publish/cloudflare-pages 200 in 77ms
+ ○ Compiling /api/articles/[slug]/publish ...
+ ✓ Compiled /api/articles/[slug]/publish in 1613ms (425 modules)
+ POST /api/articles/cloudflare-pages/publish 200 in 1973ms
+ GET /publish/cloudflare-pages 200 in 680ms
+ GET / 200 in 700ms
+ GET / 200 in 701ms
+ GET /?article=cloudflare-next-js 200 in 426ms
+ GET /publish/cloudflare-pages 200 in 74ms
+ GET /admin 200 in 69ms
+ GET / 200 in 63ms
+ GET /?article=cloudflare-pages 200 in 59ms
