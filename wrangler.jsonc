@@ -25,12 +25,19 @@
 		"binding": "IMAGES"
 	},
 	"observability": {
-    "logs": {
-      "enabled": true,
-      "invocation_logs": true
-    },
-    "traces": {
-      "enabled": false
-    }
-  }
+		"logs": {
+			"enabled": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": false
+		}
+	},
+	"kv_namespaces": [
+		{
+			"binding": "ARTICLES",
+			"id": "93becce9c6da4a3186a0365e5991b40d",
+			"remote": true
+		}
+	]
 }

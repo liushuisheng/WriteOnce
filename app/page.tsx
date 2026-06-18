@@ -5,6 +5,8 @@ import { ScrollState } from "@/app/components/ScrollState";
 import { listArticles, getArticle } from "@/lib/articles";
 import { BlogArticle } from "./blog/[slug]/BlogArticle";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage({
   searchParams
 }: {

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getArticle } from "@/lib/articles";
 import { Editor } from "./Editor";
 
+export const dynamic = "force-dynamic";
+
 export default async function WritePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const isNew = slug === "new";

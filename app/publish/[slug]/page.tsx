@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getArticle } from "@/lib/articles";
 import { Publisher } from "./Publisher";
 
+export const dynamic = "force-dynamic";
+
 export default async function PublishPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = await getArticle(slug);

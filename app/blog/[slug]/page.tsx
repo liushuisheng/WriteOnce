@@ -4,6 +4,8 @@ import { Logo } from "@/app/components/Logo";
 import { getArticle } from "@/lib/articles";
 import { BlogArticle } from "./BlogArticle";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = await getArticle(slug);

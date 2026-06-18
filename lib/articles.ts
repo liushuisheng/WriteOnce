@@ -1,5 +1,4 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { marked } from "marked";
 
 export type ArticleMeta = {
@@ -22,7 +21,41 @@ export type ArticleHeading = {
   depth: number;
 };
 
-const articlesDir = path.join(process.cwd(), "content", "articles");
+const articleKeyPrefix = "article:";
+
+type ArticleKVNamespace = {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string): Promise<void>;
+  list(options?: { prefix?: string }): Promise<{ keys: { name: string }[] }>;
+};
+
+function getArticlesKv(): ArticleKVNamespace | null {
+  let env: CloudflareEnv;
+
+  try {
+    env = getCloudflareContext().env;
+  } catch {
+    return null;
+  }
+
+  const kv = (env as CloudflareEnv & { ARTICLES?: ArticleKVNamespace }).ARTICLES;
+  if (!kv) {
+    throw new Error("Cloudflare Worker 缺少 ARTICLES KV binding，请在 wrangler.jsonc 中配置 kv_namespaces。");
+  }
+
+  return kv;
+}
+
+async function getFsStorage() {
+  const [{ promises: fs }, path] = await Promise.all([import("node:fs"), import("node:path")]);
+  const articlesDir = path.join(process.cwd(), "content", "articles");
+
+  return {
+    articlesDir,
+    fs,
+    path
+  };
+}
 
 function parseFrontmatter(raw: string): { meta: ArticleMeta; content: string } {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
@@ -70,11 +103,20 @@ function toFrontmatter(article: ArticleMeta, content: string) {
   ].join("\n");
 }
 
-function slugToFile(slug: string) {
+function validateSlug(slug: string) {
   if (!/^[a-z0-9-]+$/.test(slug)) {
     throw new Error("路径标识只能包含小写字母、数字和连字符。");
   }
+}
 
+function slugToKey(slug: string) {
+  validateSlug(slug);
+  return `${articleKeyPrefix}${slug}`;
+}
+
+async function slugToFile(slug: string) {
+  validateSlug(slug);
+  const { articlesDir, path } = await getFsStorage();
   return path.join(articlesDir, `${slug}.md`);
 }
 
@@ -113,6 +155,22 @@ async function renderMarkdown(content: string) {
 }
 
 export async function listArticles(): Promise<ArticleMeta[]> {
+  const kv = getArticlesKv();
+  if (kv) {
+    const keys = await kv.list({ prefix: articleKeyPrefix });
+    const articles = await Promise.all(
+      keys.keys.map(async ({ name }) => {
+        const raw = await kv.get(name);
+        return raw ? parseFrontmatter(raw).meta : null;
+      })
+    );
+
+    return articles
+      .filter((article): article is ArticleMeta => article !== null)
+      .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  }
+
+  const { articlesDir, fs, path } = await getFsStorage();
   await fs.mkdir(articlesDir, { recursive: true });
   const files = await fs.readdir(articlesDir);
   const articles = await Promise.all(
@@ -129,7 +187,12 @@ export async function listArticles(): Promise<ArticleMeta[]> {
 
 export async function getArticle(slug: string): Promise<Article | null> {
   try {
-    const raw = await fs.readFile(slugToFile(slug), "utf8");
+    const kv = getArticlesKv();
+    const raw = kv ? await kv.get(slugToKey(slug)) : await readArticleFromFile(slug);
+    if (!raw) {
+      return null;
+    }
+
     const { meta, content } = parseFrontmatter(raw);
     const rendered = await renderMarkdown(content);
     return {
@@ -145,6 +208,11 @@ export async function getArticle(slug: string): Promise<Article | null> {
 
     throw error;
   }
+}
+
+async function readArticleFromFile(slug: string) {
+  const { fs } = await getFsStorage();
+  return fs.readFile(await slugToFile(slug), "utf8");
 }
 
 export async function saveArticle(input: {
@@ -166,8 +234,17 @@ export async function saveArticle(input: {
     throw new Error("请输入文章标题。");
   }
 
-  await fs.mkdir(articlesDir, { recursive: true });
-  await fs.writeFile(slugToFile(article.slug), toFrontmatter(article, input.content), "utf8");
+  const raw = toFrontmatter(article, input.content);
+  const kv = getArticlesKv();
+
+  if (kv) {
+    await kv.put(slugToKey(article.slug), raw);
+  } else {
+    const { articlesDir, fs } = await getFsStorage();
+    await fs.mkdir(articlesDir, { recursive: true });
+    await fs.writeFile(await slugToFile(article.slug), raw, "utf8");
+  }
+
   return article;
 }
 

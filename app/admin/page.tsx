@@ -3,6 +3,8 @@ import { Logo } from "@/app/components/Logo";
 import { listArticles } from "@/lib/articles";
 import { AdminArticleActions } from "./AdminArticleActions";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminPage() {
   const articles = await listArticles();
 
