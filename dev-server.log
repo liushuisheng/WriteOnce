@@ -547,3 +547,9 @@
  GET /admin 200 in 69ms
  GET / 200 in 63ms
  GET /?article=cloudflare-pages 200 in 59ms
+ GET / 200 in 605ms
+ GET / 200 in 151ms
+ ✓ Compiled in 995ms (236 modules)
+ ✓ Compiled in 166ms (236 modules)
+ ✓ Compiled in 130ms (236 modules)
+ GET / 200 in 387ms
