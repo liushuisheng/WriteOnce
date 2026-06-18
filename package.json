@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && wrangler deploy"
+    "deploy": "opennextjs-cloudflare build && wrangler deploy",
+    "kv:prepare": "node scripts/import-articles-to-kv.mjs --prepare-only",
+    "kv:import": "node scripts/import-articles-to-kv.mjs"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.19.11",

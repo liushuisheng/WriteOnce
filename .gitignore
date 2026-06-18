@@ -4,4 +4,5 @@ out
 dist
 .env
 .env.local
+.wrangler
 npm-debug.log*
