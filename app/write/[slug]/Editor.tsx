@@ -1,7 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+
+const MarkdownEditor = dynamic(() => import("@uiw/react-md-editor"), {
+  ssr: false,
+  loading: () => <div className="markdown-editor-loading">正在准备编辑器…</div>
+});
 
 type Props = {
   initialArticle: {
@@ -34,38 +40,96 @@ export function Editor({ initialArticle, isNew }: Props) {
   const [category, setCategory] = useState(initialArticle.category);
   const [message, setMessage] = useState("");
   const [saving, setSaving] = useState(false);
+  const savedSnapshot = useRef("");
 
   const suggestedSlug = useMemo(() => createSlug(title), [title]);
+  const snapshot = useMemo(
+    () => JSON.stringify({ title, slug: slug || suggestedSlug, content, status, category }),
+    [title, slug, suggestedSlug, content, status, category]
+  );
+  const isDirty = snapshot !== savedSnapshot.current;
+  const statistics = useMemo(() => {
+    const plainText = content
+      .replace(/```[\s\S]*?```/g, " ")
+      .replace(/[#>*_`\[\]()!-]/g, " ")
+      .trim();
+    const chineseCharacters = plainText.match(/[\u3400-\u9fff]/g)?.length || 0;
+    const words = plainText.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g)?.length || 0;
 
-  async function save() {
+    return {
+      characters: content.length,
+      words: chineseCharacters + words,
+      lines: content ? content.split("\n").length : 0
+    };
+  }, [content]);
+
+  useEffect(() => {
+    savedSnapshot.current = JSON.stringify({
+      title: initialArticle.title,
+      slug: initialArticle.slug || createSlug(initialArticle.title),
+      content: initialArticle.content,
+      status: initialArticle.status,
+      category: initialArticle.category
+    });
+  }, [initialArticle]);
+
+  const save = useCallback(async () => {
+    if (saving) return;
     setSaving(true);
     setMessage("");
 
-    const response = await fetch("/api/articles", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title,
-        slug: slug || suggestedSlug,
-        content,
-        status,
-        category
-      })
-    });
+    try {
+      const response = await fetch("/api/articles", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title,
+          slug: slug || suggestedSlug,
+          content,
+          status,
+          category
+        })
+      });
 
-    setSaving(false);
+      if (!response.ok) {
+        const payload = (await response.json()) as { error?: string };
+        setMessage(payload.error || "保存失败");
+        return;
+      }
 
-    if (!response.ok) {
-      const payload = (await response.json()) as { error?: string };
-      setMessage(payload.error || "保存失败");
-      return;
+      const payload = (await response.json()) as { slug: string };
+      savedSnapshot.current = snapshot;
+      setMessage("已保存");
+      router.push(`/write/${payload.slug}`);
+      router.refresh();
+    } catch {
+      setMessage("网络异常，请稍后重试");
+    } finally {
+      setSaving(false);
     }
+  }, [saving, title, slug, suggestedSlug, content, status, category, snapshot, router]);
 
-    const payload = (await response.json()) as { slug: string };
-    setMessage("已保存");
-    router.push(`/write/${payload.slug}`);
-    router.refresh();
-  }
+  useEffect(() => {
+    const handleShortcut = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") {
+        event.preventDefault();
+        void save();
+      }
+    };
+
+    window.addEventListener("keydown", handleShortcut);
+    return () => window.removeEventListener("keydown", handleShortcut);
+  }, [save]);
+
+  useEffect(() => {
+    const warnBeforeLeaving = (event: BeforeUnloadEvent) => {
+      if (!isDirty) return;
+      event.preventDefault();
+    };
+
+    window.addEventListener("beforeunload", warnBeforeLeaving);
+    return () => window.removeEventListener("beforeunload", warnBeforeLeaving);
+  }, [isDirty]);
 
   return (
     <div className="editor-layout">
@@ -79,15 +143,37 @@ export function Editor({ initialArticle, isNew }: Props) {
           }}
           placeholder="文章标题"
         />
-        <textarea
-          className="markdown-input"
-          value={content}
-          onChange={(event) => setContent(event.target.value)}
-          spellCheck={false}
-        />
+        <div className="editor-context-bar">
+          <span className="live-preview-label"><i />实时预览</span>
+          <span>支持 Markdown · Ctrl/⌘ + S 保存</span>
+        </div>
+        <div className="markdown-editor-wrap" data-color-mode="light">
+          <MarkdownEditor
+            value={content}
+            onChange={(value) => setContent(value || "")}
+            preview="live"
+            height="68vh"
+            minHeight={480}
+            maxHeight={1000}
+            visibleDragbar={false}
+            textareaProps={{
+              "aria-label": "Markdown 正文编辑器",
+              placeholder: "开始写作，右侧会实时呈现排版效果…",
+              spellCheck: false
+            }}
+          />
+        </div>
+        <footer className="editor-statusbar">
+          <span>{isDirty ? "有未保存的修改" : "所有修改均已保存"}</span>
+          <span>{statistics.words} 字 · {statistics.characters} 字符 · {statistics.lines} 行</span>
+        </footer>
       </section>
 
       <aside className="publish-panel">
+        <div className="publish-panel-heading">
+          <strong>发布设置</strong>
+          <span className={isDirty ? "save-state dirty" : "save-state"}>{isDirty ? "未保存" : "已保存"}</span>
+        </div>
         <label>
           分类
           <input value={category} onChange={(event) => setCategory(event.target.value)} placeholder="例如：技术笔记" />
@@ -99,7 +185,7 @@ export function Editor({ initialArticle, isNew }: Props) {
             <option value="published">已发布</option>
           </select>
         </label>
-        <button className="button primary full" onClick={save} disabled={saving}>
+        <button className="button primary full editor-save-button" onClick={() => void save()} disabled={saving || !isDirty}>
           {saving ? "保存中" : "保存"}
         </button>
         {message ? <p className="message">{message}</p> : null}

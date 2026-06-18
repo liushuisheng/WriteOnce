@@ -262,7 +262,7 @@ h1 {
 
 .editor-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
+  grid-template-columns: minmax(0, 1fr) 260px;
   gap: 16px;
   align-items: start;
 }
@@ -277,36 +277,148 @@ h1 {
 
 .editor-main {
   overflow: hidden;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
 }
 
 .title-input {
   width: 100%;
   border: 0;
   border-bottom: 1px solid var(--line);
-  padding: 18px;
+  padding: 22px 24px 18px;
   color: var(--ink);
   font-size: 28px;
   font-weight: 700;
   outline: none;
 }
 
-.markdown-input {
-  width: 100%;
-  min-height: 64vh;
-  resize: vertical;
+.editor-context-bar,
+.editor-statusbar,
+.publish-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.editor-context-bar {
+  min-height: 38px;
+  border-bottom: 1px solid var(--line);
+  background: #fafbfc;
+  padding: 0 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.live-preview-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.live-preview-label i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 4px #dcfce7;
+}
+
+.markdown-editor-loading {
+  display: grid;
+  min-height: 68vh;
+  place-items: center;
+  color: var(--muted);
+}
+
+.markdown-editor-wrap .w-md-editor {
   border: 0;
-  padding: 18px;
-  color: var(--ink);
-  font-family: Consolas, "Courier New", monospace;
+  border-radius: 0;
+  box-shadow: none;
+  --color-canvas-default: #fff;
+}
+
+.markdown-editor-wrap .w-md-editor-toolbar {
+  min-height: 42px;
+  border-bottom-color: var(--line);
+  background: #fff;
+  padding: 6px 10px;
+}
+
+.markdown-editor-wrap .w-md-editor-toolbar li > button {
+  width: 30px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.markdown-editor-wrap .w-md-editor-toolbar li > button:hover,
+.markdown-editor-wrap .w-md-editor-toolbar li.active > button {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.markdown-editor-wrap .w-md-editor-text,
+.markdown-editor-wrap .w-md-editor-text-input,
+.markdown-editor-wrap .w-md-editor-text-pre > code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace !important;
+  font-size: 14px !important;
+  line-height: 1.75 !important;
+}
+
+.markdown-editor-wrap .w-md-editor-text {
+  padding: 22px 24px;
+}
+
+.markdown-editor-wrap .wmde-markdown {
+  padding: 28px 32px;
+  font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
   font-size: 15px;
-  line-height: 1.7;
-  outline: none;
+  line-height: 1.8;
+}
+
+.editor-statusbar {
+  min-height: 38px;
+  border-top: 1px solid var(--line);
+  background: #fafbfc;
+  padding: 0 14px;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .publish-panel {
   display: grid;
   gap: 14px;
   padding: 16px;
+  position: sticky;
+  top: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.publish-panel-heading {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 13px;
+}
+
+.save-state {
+  border-radius: 999px;
+  background: #ecfdf3;
+  color: #067647;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.save-state.dirty {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.editor-save-button:disabled {
+  border-color: #d1d5db;
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: default;
 }
 
 .publish-panel label {
@@ -1174,6 +1286,36 @@ h1 {
 
   h1 {
     font-size: 30px;
+  }
+
+  .publish-panel {
+    position: static;
+  }
+
+  .editor-context-bar > span:last-child {
+    display: none;
+  }
+
+  .markdown-editor-wrap .w-md-editor:not(.w-md-editor-show-preview):not(.w-md-editor-show-edit) .w-md-editor-input {
+    width: 100%;
+  }
+
+  .markdown-editor-wrap .w-md-editor:not(.w-md-editor-show-preview):not(.w-md-editor-show-edit) .w-md-editor-preview {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .markdown-editor-wrap .w-md-editor-text {
+    padding: 18px 16px;
+  }
+
+  .editor-statusbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+    padding-bottom: 8px;
+    padding-top: 8px;
   }
 
   .blog-shell {

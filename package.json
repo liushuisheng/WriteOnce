@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.19.11",
+    "@uiw/react-md-editor": "^4.1.1",
     "marked": "^13.0.3",
     "next": "^15.3.4",
     "react": "^19.0.0",
